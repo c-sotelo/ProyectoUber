@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
       alert("Ingrese una contraseña");
       return;
     }
-    if (this.correo == "123" && this.contrasena == '123') {
+    if (this.correo == "benja241104@gmail.com" && this.contrasena == 'contraseña') {
       this.router.navigateByUrl("/inicio");
     }else{
       alert("Credenciales incorrectas.");
