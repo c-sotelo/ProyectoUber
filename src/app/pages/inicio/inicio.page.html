@@ -43,41 +43,43 @@
         Viaja en este vehiculo
       </ion-button>
       </ion-card>
+
+  <ion-card class="card4">
+        
+      <ion-card-content><div class="veh-container">
+        <div class="veh-image">
+          
+            <img src="assets/images/autoblanco.jpeg"  />
+          
+        </div>
+      </div>
+
+    </ion-card-content>
+    <ion-button (click)="viaje()">
+      Viaja en este vehiculo
+    </ion-button>
   </ion-card>
+  <ion-card class="card5">
+        
+    <ion-card-content><div class="veh-container">
+      <div class="veh-image">
+        
+          <img src="assets/images/.-..jpeg"  />
+        
+      </div>
+    </div>
+
+  </ion-card-content>
+  <ion-button (click)="viaje()">
+    Viaja en este vehiculo
+  </ion-button>
+  </ion-card>
+</ion-card>
   
     <ion-button class="mover" (click)="play()">mover</ion-button>
     <ion-button class="pausar" (click)="pause()">pausar</ion-button>
     <ion-button class="reiniciar" (click)="stop()">reiniciar</ion-button>
 
   </ng-container>
-
-
-
-
-  <ion-list *ngIf="!loaded">
-    <ion-list-header>
-      <h3>
-        <ion-skeleton-text [animated]="true" style="width: 150px; height: 30px;"></ion-skeleton-text>
-      </h3>
-    </ion-list-header>
-    
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
-      </ion-thumbnail>
-      <ion-label>
-        <h3>
-          <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
-        </h3>
-        <p>
-          <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
-        </p>
-        <p>
-          <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
-        </p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
 
 </ion-content>
