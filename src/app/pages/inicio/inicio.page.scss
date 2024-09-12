@@ -4,26 +4,37 @@ ion-icon{
     margin-right: 15px;
 }
 
-  ion-card{
 
-    border: 1px solid #ccc; /* Para una línea de borde opcional */
-    border-radius: 8px; /* Bordes redondeados */
+
+.card1 {
+
+  
+  
     
 
+      display: flex; /* Usamos flexbox */
+      justify-content: flex-end; /* Alineamos el contenido a la derecha */ 
+        
 
+      height: 50%; // Mantiene la relación de aspecto
+      border-radius: 8px; // Opcional, para bordes redondeados
+    
+    
+    
+    
+
+    
+        
 
     width: auto;  // Ajusta el tamaño al 100% del contenedor
     height: auto; // Mantiene la relación de aspecto
     border-radius: 8px; // Opcional, para bordes redondeados
-    ion-card-content{
-        display: flex; /* Usamos flexbox */
-        justify-content: flex-end; /* Alineamos el contenido a la derecha */
 
-    }
+
+    
     img {
 
-        display: flex; /* Usamos flexbox */
-        justify-content: flex-end; /* Alineamos el contenido a la derecha */
+        
         
         width: 25%;  // Ajusta el tamaño al 100% del contenedor
         height: 25%; // Mantiene la relación de aspecto
@@ -33,17 +44,45 @@ ion-icon{
 
     
     }
-    ion-card{
+    
     ion-button{
 
 
-        width: 25%;  // Ajusta el tamaño al 100% del contenedor
-        height: 25%; // Mantiene la relación de aspecto
+        width: 30%;  // Ajusta el tamaño al 100% del contenedor
+        height: 30%; // Mantiene la relación de aspecto
         border-radius: 8px;
 
+
+
+
+
         }
-  }
 
 
-      
+        .reiniciar{
+
+
+          width: 30%;  // Ajusta el tamaño al 100% del contenedor
+          height: 10%; // Mantiene la relación de aspecto
+          border-radius: 8px;
+       }
+       .pausar{
+
+
+        width: 30%;  // Ajusta el tamaño al 100% del contenedor
+        height: 10%; // Mantiene la relación de aspecto
+        border-radius: 8px;
+     }
+     .mover{
+
+
+      width: 30%;  // Ajusta el tamaño al 100% del contenedor
+      height: 10%; // Mantiene la relación de aspecto
+      border-radius: 8px;
+   }
+
+
+
+
+  
     
