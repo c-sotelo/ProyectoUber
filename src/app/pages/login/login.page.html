@@ -4,14 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- Logo y nombre -->
-<div class="header-container">
-  <h1>H1 Heading</h1>
-
-</div>
-
 <ion-content [fullscreen]="true">
-<!-- Inputs correo y contra -->
+
   <div class="box">
     <ion-list>
       <ion-item>
@@ -29,6 +23,13 @@
     <ion-button color="warning" routerLink="/registro">Registrarse</ion-button>
   </div>
 
+  <ion-button (click)="registro()">
+    Registro
+  </ion-button>
+
+  <ion-button (click)="recuperarcontra()">
+    Recuperar contraseña
+  </ion-button>
 
 
 
