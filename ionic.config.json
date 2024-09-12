@@ -1,0 +1,7 @@
+{
+  "name": "ProyectoUber",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
