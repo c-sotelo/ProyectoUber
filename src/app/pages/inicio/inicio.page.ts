@@ -67,9 +67,12 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
 
 
   viaje(){
-    let destino = "Argentina";
-                      //path: 'viaje/:destino',
-    this.router.navigateByUrl('viaje/' + destino);
+
+    this.router.navigateByUrl('viaje/');
+  }
+  registro(){
+
+    this.router.navigateByUrl('registro/');
   }
 
   

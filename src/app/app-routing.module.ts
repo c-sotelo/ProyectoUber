@@ -8,8 +8,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+    
   },
 
   {
@@ -24,10 +25,7 @@ const routes: Routes = [
     path: 'vehiculo',
     loadChildren: () => import('./pages/vehiculo/vehiculo.module').then( m => m.VehiculoPageModule)
   },
-  {
-    path: 'perfil-usuario',
-    loadChildren: () => import('./pages/perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
-  },
+
   {
   path: 'viaje',
   loadChildren: () => import('./pages/viaje/viaje.module').then( m => m.ViajePageModule)
@@ -36,6 +34,19 @@ const routes: Routes = [
     path: 'vehiculo',
     loadChildren: () => import('./pages/vehiculo/vehiculo.module').then( m => m.VehiculoPageModule)
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'recuperarcontra',
+    loadChildren: () => import('./pages/recuperarcontra/recuperarcontra.module').then( m => m.RecuperarcontraPageModule)
+  },
+  {
+    path: 'perfilusuario',
+    loadChildren: () => import('./pages/perfilusuario/perfilusuario.module').then( m => m.PerfilusuarioPageModule)
+  },
+
 
 ];
 
