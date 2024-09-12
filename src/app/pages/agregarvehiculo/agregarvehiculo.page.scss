@@ -21,3 +21,12 @@ ion-item {
     font-weight: bold;
     color: var(--ion-color-light);
 }
+
+.centered-button {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  

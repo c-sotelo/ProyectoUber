@@ -49,6 +49,10 @@ const routes: Routes = [
     path: 'agregarvehiculo',
     loadChildren: () => import('./pages/agregarvehiculo/agregarvehiculo.module').then( m => m.AgregarvehiculoPageModule)
   },
+  {
+    path: 'iniciarviaje',
+    loadChildren: () => import('./pages/iniciarviaje/iniciarviaje.module').then( m => m.IniciarviajePageModule)
+  },
 
 
 
