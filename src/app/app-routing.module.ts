@@ -11,8 +11,13 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
   {
-    path: 'inicio',
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'inicio',    
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
@@ -24,9 +29,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/perfil-usuario/perfil-usuario.module').then( m => m.PerfilUsuarioPageModule)
   },
   {
-    path: 'viaje',
-    loadChildren: () => import('./pages/viaje/viaje.module').then( m => m.ViajePageModule)
+  path: 'viaje',
+  loadChildren: () => import('./pages/viaje/viaje.module').then( m => m.ViajePageModule)
   },
+  {
+    path: 'vehiculo',
+    loadChildren: () => import('./pages/vehiculo/vehiculo.module').then( m => m.VehiculoPageModule)
+  },
+
 ];
 
 @NgModule({
