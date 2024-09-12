@@ -1,13 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>recuperarcontra</ion-title>
+    <ion-title>Recuperar Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">recuperarcontra</ion-title>
+      <ion-title size="large">Recuperar Contraseña</ion-title>
     </ion-toolbar>
   </ion-header>
+<!-- card para recuperar contraseña -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¡Recupérala aquí!</ion-card-title>
+      <ion-card-subtitle>¿Olvidaste tu contraseña?</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Por favor ingresa tu correo:
+      <ion-list>
+        <!-- input para colocar correo -->
+        <ion-item class="card-input">
+          <ion-input labelPlacement="floating" value="tucorreo@tuproveedor.com">
+            <div slot="label">Email <ion-text color="danger">(Obligatorio)</ion-text></div>
+          </ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+<!-- botones de enviar codigo y probar otro metodo -->
+    <ion-button id="present-alert" class="btn-enviar" fill="clear" color="success" routerLink="/login">Enviar Código</ion-button>
+    <ion-button class="btn-probar" fill="clear" color="warning">Probar otro método</ion-button>
+  </ion-card>
+  <!-- alerta de codigo enviado -->
+  <ion-alert trigger="present-alert" header="¡Código enviado!" subHeader="Por favor revise su correo"
+    message="El correo puede demorar unos minutos en aparecer. Recuerde revisar su carpeta de spam"></ion-alert>
+
 </ion-content>
