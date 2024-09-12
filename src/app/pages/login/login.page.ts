@@ -40,13 +40,15 @@ export class LoginPage implements OnInit {
   }
 
 
-  registro(){
 
-    this.router.navigateByUrl('registro/');
-  }
   
   recuperarcontra(){
 
     this.router.navigateByUrl('recuperarcontra/');
   }
+  registro(){
+
+    this.router.navigateByUrl('registro/');
+  }
+  
 }
