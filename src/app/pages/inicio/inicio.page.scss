@@ -3,3 +3,47 @@ ion-icon{
     font-size: 25px;
     margin-right: 15px;
 }
+
+  ion-card{
+
+    border: 1px solid #ccc; /* Para una línea de borde opcional */
+    border-radius: 8px; /* Bordes redondeados */
+    
+
+
+
+    width: auto;  // Ajusta el tamaño al 100% del contenedor
+    height: auto; // Mantiene la relación de aspecto
+    border-radius: 8px; // Opcional, para bordes redondeados
+    ion-card-content{
+        display: flex; /* Usamos flexbox */
+        justify-content: flex-end; /* Alineamos el contenido a la derecha */
+
+    }
+    img {
+
+        display: flex; /* Usamos flexbox */
+        justify-content: flex-end; /* Alineamos el contenido a la derecha */
+        
+        width: 25%;  // Ajusta el tamaño al 100% del contenedor
+        height: 25%; // Mantiene la relación de aspecto
+        border-radius: 8px; // Opcional, para bordes redondeados
+      }
+
+
+    
+    }
+    ion-card{
+    ion-button{
+
+
+        width: 25%;  // Ajusta el tamaño al 100% del contenedor
+        height: 25%; // Mantiene la relación de aspecto
+        border-radius: 8px;
+
+        }
+  }
+
+
+      
+    

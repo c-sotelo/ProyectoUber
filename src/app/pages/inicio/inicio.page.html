@@ -3,9 +3,6 @@
 
     <ion-icon (click)="logout()" name="trash"  slot="end"></ion-icon>
 
-
-
-    
     <ion-title>inicio</ion-title>
   </ion-toolbar>
   <ion-buttons slot="start">
@@ -17,29 +14,42 @@
 
 
 
-  <ng-container *ngIf="loaded"> 
-    <h1>{{correo}}</h1>
+  <ng-container > 
 
-    <ion-button (click)="viaje()">
-      Viaje
-    </ion-button>
-
-    <ion-button (click)="registro()">
-      Registro
-    </ion-button>
-  
-  
     <ion-card #card>
-      <ion-card-content>Card</ion-card-content>
+      <ion-card-content><div class="veh-container">
+        <div class="veh-image">
+          
+            <img src="assets/images/istockphoto-1150931120-2048x2048.jpg"  />
+          
+        </div>
+      </div>
+
+    </ion-card-content>
+    <ion-button (click)="viaje()">
+      Viaja con este vehiculo
+    </ion-button>
+   
+
+   
+      <ion-card-content><div class="veh-container">
+        <div class="veh-image">
+            <img src="assets/images/autorojo.png"  />
+        </div>
+      </div>
+    </ion-card-content>
+    <ion-button (click)="viaje()">
+      Viaja con este vehiculo
+    </ion-button>
     </ion-card>
-    
-    <ion-button (click)="play()">Play</ion-button>
-    <ion-button (click)="pause()">Pause</ion-button>
-    <ion-button (click)="stop()">Stop</ion-button>
+
+    <ion-button (click)="play()">mover</ion-button>
+    <ion-button (click)="pause()">pausar</ion-button>
+    <ion-button (click)="stop()">reiniciar</ion-button>
 
   </ng-container>
 
-  
+
 
 
   <ion-list *ngIf="!loaded">
