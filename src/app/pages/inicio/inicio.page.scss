@@ -5,84 +5,44 @@ ion-icon{
 }
 
 
-
-.card1 {
-
-  
-  
-    
-
-      display: flex; /* Usamos flexbox */
-      justify-content: flex-end; /* Alineamos el contenido a la derecha */ 
-        
-
-      height: 50%; // Mantiene la relación de aspecto
-      border-radius: 8px; // Opcional, para bordes redondeados
-    
-    
-    
-    
-
-    
-        
-
-    width: auto;  // Ajusta el tamaño al 100% del contenedor
-    height: auto; // Mantiene la relación de aspecto
-    border-radius: 8px; // Opcional, para bordes redondeados
-
-
-    
-    img {
-
-        
-        
-        width: 25%;  // Ajusta el tamaño al 100% del contenedor
-        height: 25%; // Mantiene la relación de aspecto
-        border-radius: 8px; // Opcional, para bordes redondeados
-      }
-
-
-    
-    }
-    
-    ion-button{
-
-
-        width: 30%;  // Ajusta el tamaño al 100% del contenedor
-        height: 30%; // Mantiene la relación de aspecto
-        border-radius: 8px;
-
-
-
-
-
-        }
-
-
         .reiniciar{
 
 
-          width: 30%;  // Ajusta el tamaño al 100% del contenedor
-          height: 10%; // Mantiene la relación de aspecto
+          width: auto;  // Ajusta el tamaño al 100% del contenedor
+          height: 5%; // Mantiene la relación de aspecto
           border-radius: 8px;
        }
        .pausar{
 
 
-        width: 30%;  // Ajusta el tamaño al 100% del contenedor
-        height: 10%; // Mantiene la relación de aspecto
+        width: auto;  // Ajusta el tamaño al 100% del contenedor
+        height: 5%; // Mantiene la relación de aspecto
         border-radius: 8px;
      }
      .mover{
 
 
-      width: 30%;  // Ajusta el tamaño al 100% del contenedor
-      height: 10%; // Mantiene la relación de aspecto
+      width: auto;  // Ajusta el tamaño al 100% del contenedor
+      height: 5%; // Mantiene la relación de aspecto
       border-radius: 8px;
    }
 
 
-
-
+   .card-container {
+    display: flex;
+    justify-content: space-between; /* Esto separará las tarjetas */
+  }
   
+  .card1 {
+    width: 200%; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0%; 
+
+}
+
+.card2, .card3, .card4, .card5 {
+    width: 25%; 
     
+
+}
