@@ -13,3 +13,26 @@ ion-item ion-input {
     color: var(--ion-color-light);
     font-weight: bold;
 }
+/*
+img {
+    z-index: 1000;
+    position: relative;
+    height: 40%;
+    padding-top: 20%;
+}
+
+*/
+.header-container {
+text-align: center;
+margin-top: 20px; 
+}
+
+header-container h1 {
+margin-bottom: 10px;
+}
+
+.pin-image {
+display: block;
+margin: 0 auto;
+width: 100px;
+}
