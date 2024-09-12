@@ -11,8 +11,17 @@
     width: 150px;
     height: 150px;
     background: black;
-    border: 3px solid gray;
+    border: 3px solid var(--ion-color-light);
     position: relative;
     overflow: hidden;
     padding-bottom: 0cm;
+}
+
+ion-item p {
+    color: var(--ion-color-light);
+}
+
+ion-item h1 {
+    font-weight: bold;
+    color: var(--ion-color-light);
 }

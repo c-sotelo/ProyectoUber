@@ -16,3 +16,29 @@
     overflow: hidden;
     padding-bottom: 0cm;
 }
+
+ion-accordion-group {
+border-radius: 15px;
+overflow: hidden;
+}
+//color de fondo del contenido de accordions
+ion-accordion-group .ion-padding {
+    background-color: white;
+}
+//sombra ligera y redondea
+ion-accordion {
+border-radius: 15px;
+margin-bottom: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+ion-accordion-header {
+border-radius: 15px;
+--background: #f9f9f9;
+--border-color:var(--ion-color-light);
+}
+
+ion-accordion-content {
+border-radius: 0 0 15px 15px;
+--background: #ffffff;
+}
