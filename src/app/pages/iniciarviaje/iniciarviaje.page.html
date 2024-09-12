@@ -38,8 +38,16 @@
     </ion-list>
   </ion-list>
 
-  <ion-button class="centered-button">
+  <ion-button id="click-trigger" class="centered-button">
     <ion-icon slot="start" name="map-outline"></ion-icon>
     Iniciar Viaje
   </ion-button>
+  <ion-popover trigger="click-trigger" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding" color="light">
+       <p class="popover-text">Viaje Agendado!</p> 
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+  
 </ion-content>
