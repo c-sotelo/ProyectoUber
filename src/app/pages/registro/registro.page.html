@@ -1,13 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>registro</ion-title>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
+      <ion-title size="large">Registro</ion-title>
     </ion-toolbar>
   </ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+  <div class="box">
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="correo" label="Correo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="contrasena" label="Contraseña"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="contraconfirm" label="Confirme contraseña"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+  
+    <ion-button (click)="registro()" color="warning">Registrarse</ion-button>
+
+  </div>
+
+
+
+
+
+
 </ion-content>
