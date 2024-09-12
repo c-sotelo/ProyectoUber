@@ -57,4 +57,16 @@
     </ion-list>
   </ion-list>
 
+  <ion-button id="click-trigger" class="centered-button">
+    <ion-icon slot="start" name="car-outline"></ion-icon>
+    Agregar Vehiculo
+  </ion-button>
+  <ion-popover trigger="click-trigger" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding" color="light">
+       <p class="popover-text">Vehiculo Agregado!</p> 
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+
 </ion-content>
