@@ -6,6 +6,7 @@ import { ElementRef, ViewChildren, ViewChild } from '@angular/core';
 import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { AnimationController, IonCard } from '@ionic/angular';
+import { VehiculoPage } from '../vehiculo/vehiculo.page';
 
 
 
@@ -64,18 +65,6 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
       this.loaded = true;
     },4000)
   }
-
-
-  viaje(){
-
-    this.router.navigateByUrl('viaje/');
-  }
-  registro(){
-
-    this.router.navigateByUrl('registro/');
-  }
-
-  
 
   play() {
     if (this.animation) {
