@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment.prod';
-import { firebaseConfig } from '../environments/environment';
 
 
 
