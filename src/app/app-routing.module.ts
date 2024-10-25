@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
     
   },
@@ -45,7 +45,8 @@ const routes: Routes = [
   {
     path: 'perfilusuario',
     loadChildren: () => import('./pages/perfilusuario/perfilusuario.module').then( m => m.PerfilusuarioPageModule)
-  },  {
+  },
+  {
     path: 'agregarvehiculo',
     loadChildren: () => import('./pages/agregarvehiculo/agregarvehiculo.module').then( m => m.AgregarvehiculoPageModule)
   },
