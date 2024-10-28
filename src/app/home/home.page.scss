@@ -1,3 +1,4 @@
+/*
 #container {
   text-align: center;
 
@@ -24,4 +25,34 @@
 
 #container a {
   text-decoration: none;
+}
+*/
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.animated-image {
+  position: absolute;
+  top: -100px;
+  opacity: 0;
+}
+
+.animate {
+  animation: slideDown 1s forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+    transform: translateY(-50%);
+  }
 }
