@@ -10,13 +10,27 @@ export class HomePage {
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ionViewWillEnter() {
+    const animatedText = this.el.nativeElement.querySelector('.animated-text');
     const animatedImage = this.el.nativeElement.querySelector('.animated-image');
+    const animatedButtons = this.el.nativeElement.querySelector('.button-container');
+
+    if (animatedText) {
+      this.resetAnimation(animatedText, 'animate-text');
+    }
+
     if (animatedImage) {
-      this.renderer.removeClass(animatedImage, 'animate'); // Quita la clase para reiniciar la animación
-      setTimeout(() => {
-        this.renderer.addClass(animatedImage, 'animate'); // Añade la clase nuevamente para activar la animación
-      }, 50); // Delay corto para asegurar el reinicio
+      this.resetAnimation(animatedImage, 'animate-image');
+    }
+
+    if (animatedButtons) {
+      this.resetAnimation(animatedButtons, 'animate-buttons');
     }
   }
 
+  private resetAnimation(element: HTMLElement, animationClass: string) {
+    this.renderer.removeClass(element, animationClass);
+    setTimeout(() => {
+      this.renderer.addClass(element, animationClass);
+    }, 50);
+  }
 }
