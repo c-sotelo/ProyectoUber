@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
@@ -17,7 +17,11 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p class="animated-text">U B E R</p>
+    <img src="assets/images/logohome.png" class="animated-image" alt="Animated Image"/>
+    <div class="button-container">
+      <ion-button expand="block" class="animated-button" routerLink="/login">Login</ion-button>
+      <ion-button expand="block" class="animated-button" color="warning" routerLink="/registro">Registrarse</ion-button>
+    </div>
   </div>
 </ion-content>
