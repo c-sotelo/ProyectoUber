@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
-import { enviroment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -24,7 +24,7 @@ export class UsuarioService {
   
       formData.append('image_usuario', imgFileUser.file, imgFileUser.name);
   
-      const response = await lastValueFrom(this.http.post<any>(enviroment.apiUrl + 'user/agregar',formData));
+      const response = await lastValueFrom(this.http.post<any>(environment.apiUrl + 'user/agregar',formData));
       return response;
       
     } catch (error) {
@@ -40,7 +40,7 @@ export class UsuarioService {
         p_correo: data.p_correo,
         token:data.token
       }
-      const response = await lastValueFrom(this.http.get<any>(enviroment.apiUrl + 'user/obtener',{params}));
+      const response = await lastValueFrom(this.http.get<any>(environment.apiUrl + 'user/obtener',{params}));
       return response;
     } catch (error) {
       throw error;

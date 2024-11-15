@@ -1,6 +1,6 @@
 
 // Your web app's Firebase configuration
-export const enviroment = {
+export const environment = {
   production: false,
     firebaseConfig : {
       apiKey: "AIzaSyChIudFU6W4rIHyrhq_E4s2KpOhOi7tW0k",
