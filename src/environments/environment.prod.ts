@@ -7,6 +7,8 @@ export const environment = {
       storageBucket: "pumarinosotelo.appspot.com",
       messagingSenderId: "958962820482",
       appId: "1:958962820482:web:c20d9ed4164469094edb9b"
-      }
+      },
+
+      apiUrl:"https://uber-nodejs-server-git-d61f89-guillermovillacuratorres-projects.vercel.app/api/"
 
 };
