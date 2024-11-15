@@ -117,4 +117,8 @@ export class LoginPage implements OnInit {
     this.router.navigateByUrl("registro");
   }
 
+
+  recuperarcontra(){
+    
+  }
 }

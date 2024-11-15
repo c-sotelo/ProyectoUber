@@ -9,6 +9,7 @@ export const environment = {
       appId: "1:958962820482:web:c20d9ed4164469094edb9b"
       },
 
+      //la api del profe :3
       apiUrl:"https://uber-nodejs-server-git-d61f89-guillermovillacuratorres-projects.vercel.app/api/"
-
+  
 };
