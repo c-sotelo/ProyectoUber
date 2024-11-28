@@ -37,76 +37,41 @@ export class LoginPage implements OnInit {
   async login(){
   
     if (this.correo == "") {
-      this.helper.showAlert("Ingrese el correo", "Error de validación");
+      await this.helper.showAlert("Ingrese el correo", "Error");
       return;
     }
     if (this.contrasena == "") {
-      this.helper.showAlert("Ingrese la contraseña", "Error de validación");
+      await this.helper.showAlert("Ingrese la contraseña", "Error");
       return;
     }
-    /* if (this.correo == "123" && this.contrasena == '123') {
-      this.router.navigateByUrl("/inicio");
-    }else{
-      alert("Credenciales incorrectas.");
-    } */
 
     const loader = await this.helper.showLoader("Cargando");
+    
     try {
-
-      const reqFirebase = await this.firebase.login(this.correo,this.contrasena);
-      //solicitud get user
-      const token = await reqFirebase.user?.getIdToken();
+      const response = await this.firebase.login(this.correo, this.contrasena);
+      const token = await response.user?.getIdToken();
 
       if (token) {
         this.token = token;
-        const req = await this.usuarioService.obtenerUsuario(
-          {
-            p_correo:this.correo,
-            token:token
-          }
-        );
-        this.usuario = req.data;
-        console.log("DATA USUARIO", this.usuario[0].id_usuario);
-        
+        const jsonToken = [{
+          "token": token,
+          "usuario_correo": this.correo
+        }];
+        await this.storage.agregarToken(jsonToken);
+        await loader.dismiss();
+        await this.helper.showToast("¡Bienvenido!");
+        this.router.navigateByUrl("/inicio");
       }
-      
-      loader.dismiss();
-    } catch (error:any) {
-      
-      let msg = "Ocurrió un error al iniciar sesión.";
-      
-      if(error.code == "auth/invalid-credential1"){
-        msg = "Credenciales incorrectas.";
-      }else if(error.code == "auth/wrong-password1"){
-        msg = "Contraseña incorrecta.";
-      }else if(error.code == "auth/invalid-email1"){
-        msg = "Correo no valido.";
+    } catch (error: any) {
+      await loader.dismiss();
+      let mensaje = "Error al iniciar sesión";
+      if (error.code === "auth/invalid-credential") {
+        mensaje = "Credenciales incorrectas";
+      } else if (error.code === "auth/invalid-email") {
+        mensaje = "Correo no válido";
       }
-
-
-      this.helper.showAlert(msg,"Aceptar");
-      loader.dismiss();
+      await this.helper.showAlert(mensaje, "Error");
     }
-
-    const jsonToken = 
-    [
-      {
-        "token":this.token,
-        "usuario_id":this.usuario[0].id_usuario,
-        "usuario_correo":this.usuario[0].correo_electronico
-      }
-    ];
-
-    this.storage.agregarToken(jsonToken);
-
-
-
-    //Obtenemos la info que guardamos en storage
-    let token = await this.storage.obtenerStorage();
-    console.log(token[0].usuario_correo);
-    
-    await this.helper.showToast("Login correcto!!!!!");
-    this.router.navigateByUrl("/inicio");
   }
 
   resetPw(){

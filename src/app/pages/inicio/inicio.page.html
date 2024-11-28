@@ -1,8 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-
-    <ion-icon (click)="logout()" name="trash"  slot="end"></ion-icon>
-
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" fill="clear">
+        <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>inicio</ion-title>
   </ion-toolbar>
   <ion-buttons slot="start">
