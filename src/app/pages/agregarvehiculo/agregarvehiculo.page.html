@@ -1,72 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Agregar Vehiculo</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/vehiculo" text="Anterior"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Vehiculo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Agregar Vehiculo</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <!-- Foto del vehiculo --> 
-  <div class="veh-container">
-    <div class="veh-image">
-      <img src="https://freerangestock.com/sample/119153/car-vector-icon.jpg" alt="foto auto">
-    </div>
-  </div>
-
   <ion-list>
-    <ion-list>
-      <ion-item>
-        <ion-input label="Marca" placeholder="Kia"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-input label="Modelo" placeholder="Morning"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-input label="Color" placeholder="Rojo"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-input label="Patente" placeholder="ABCD 134"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-input label="Año" type="number" placeholder="1999"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="nuevoVehiculo.marca" label="Marca" placeholder="Kia"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-input label="Combustible" placeholder="Diesel"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input label="Capacidad Pasajeros" type="number" placeholder="4"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input label="ID Usuario" value="KS-789" [readonly]="true"></ion-input>
-      </ion-item>
-    </ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="nuevoVehiculo.modelo" label="Modelo" placeholder="Morning"></ion-input>
+    </ion-item>
   </ion-list>
 
-  <ion-button id="click-trigger" class="centered-button">
+  <ion-button (click)="agregarVehiculo()" expand="block" class="ion-margin">
     <ion-icon slot="start" name="car-outline"></ion-icon>
     Agregar Vehiculo
   </ion-button>
-  <ion-popover trigger="click-trigger" triggerAction="click">
-    <ng-template>
-      <ion-content class="ion-padding" color="light">
-       <p class="popover-text">Vehiculo Agregado!</p> 
-      </ion-content>
-    </ng-template>
-  </ion-popover>
-
 </ion-content>

@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,10 +17,10 @@
   <div class="box">
     <ion-list>
       <ion-item>
-        <ion-input [(ngModel)]="correo" label="Correo"></ion-input>
+        <ion-input [(ngModel)]="email" label="Correo"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="contrasena" label="Contraseña"></ion-input>
+        <ion-input [(ngModel)]="password" type="password" label="Contraseña"></ion-input>
       </ion-item>
 
     </ion-list>

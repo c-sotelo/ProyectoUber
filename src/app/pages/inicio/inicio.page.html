@@ -1,5 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="logout()" fill="clear">
         <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
@@ -7,50 +11,43 @@
     </ion-buttons>
     <ion-title>inicio</ion-title>
   </ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-menu-button menu="main-menu"></ion-menu-button>
-  </ion-buttons>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ng-container>
+    <ion-button expand="block" routerLink="/vehiculo">
+      <ion-icon name="car-outline" slot="start"></ion-icon>
+      Vehículos
+    </ion-button>
+    
+    <ion-button expand="block" routerLink="/viaje">
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      Historial de Viajes
+    </ion-button>
+
+    <ng-container>
+      <div class="card-container">
+        <ion-card class="card2">
+          <ion-card-content>
+            <div class="veh-container">
+              <div class="veh-image">
+                <img src="assets/images/istockphoto-1150931120-2048x2048.jpg" alt="Vehículo 1" />
+              </div>
+            </div>
+          </ion-card-content>
+          <ion-button routerLink="/vehiculo">
+            Viaja en este vehículo
+          </ion-button>
+        </ion-card>
 
 
+      </div>
 
-  <ng-container > 
-    <ion-card class="card1">
-      <ion-card class="card2">
-      
-        <ion-card-content><div class="veh-container">
-          <div class="veh-image">
-            
-              <img src="assets/images/istockphoto-1150931120-2048x2048.jpg"  />
-            
-          </div>
-        </div>
-
-      </ion-card-content>
-      <ion-button routerLink="/vehiculo">
-        Viaja en este vehiculo
-      </ion-button>
-    </ion-card>
-
-      <ion-card class="card3">
-        <ion-card-content><div class="veh-container">
-          <div class="veh-image">
-              <img src="assets/images/autorojo.png"  />
-          </div>
-        </div>
-      </ion-card-content>
-      <ion-button routerLink="/vehiculo" >
-        Viaja en este vehiculo
-      </ion-button>
-      </ion-card>
-</ion-card>
-  
-    <ion-button class="mover" (click)="play()">mover</ion-button>
-    <ion-button class="pausar" (click)="pause()">pausar</ion-button>
-    <ion-button class="reiniciar" (click)="stop()">reiniciar</ion-button>
-
+      <div class="button-container">
+        <ion-button class="mover" (click)="play()">mover</ion-button>
+        <ion-button class="pausar" (click)="pause()">pausar</ion-button>
+        <ion-button class="reiniciar" (click)="stop()">reiniciar</ion-button>
+      </div>
+    </ng-container>
   </ng-container>
-
 </ion-content>

@@ -8,12 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Vehiculo</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <!-- boton agregar vehiculo -->
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button>
@@ -21,77 +15,13 @@
     </ion-fab-button>
   </ion-fab>
 
-  <!-- Foto del vehiculo --> 
-  <div class="veh-container">
-    <div class="veh-image">
-      <img src="https://freerangestock.com/sample/119153/car-vector-icon.jpg" alt="foto auto">
-    </div>
-  </div>
-
-  <br>
-  <!-- Información del Vehiculo -->
-  <ion-accordion-group>
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light">
-        <ion-label>Marca</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Volver al futuro</div>
-    </ion-accordion>
-    <br>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>Modelo</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Delorean</div>
-    </ion-accordion>
-    <br>
-    <ion-accordion value="third">
-      <ion-item slot="header" color="light">
-        <ion-label>Color</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Gris Plateado</div>
-    </ion-accordion>
-  </ion-accordion-group>
-  <br>
-  <!-- Segundo Acordion con info de vehiculo -->
-  <ion-accordion-group>
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light">
-        <ion-label>Patente</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">ABC123456</div>
-    </ion-accordion>
-    <br>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>Año</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">1985</div>
-    </ion-accordion>
-    <br>
-    <ion-accordion value="third">
-      <ion-item slot="header" color="light">
-        <ion-label>Combustible</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Neutrinos</div>
-    </ion-accordion>
-  </ion-accordion-group>
-  <br>
-<!-- tercer acordion info vehiculo -->
-  <ion-accordion-group>
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light">
-        <ion-label>Capacidad Pasajeros</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">4 - 5</div>
-    </ion-accordion>
-    <br>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>ID Usuario</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">KS-789</div>
-    </ion-accordion>
-  </ion-accordion-group>
-  
+  <!-- Lista de vehículos -->
+  <ion-list>
+    <ion-item *ngFor="let vehiculo of vehiculos">
+      <ion-label>
+        <h2>{{vehiculo.marca}}</h2>
+        <p>{{vehiculo.modelo}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

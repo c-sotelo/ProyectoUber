@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/login" text="Anterior"></ion-back-button>
+    </ion-buttons>
     <ion-title>Recuperar Contraseña</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -22,14 +25,14 @@
       <ion-list>
         <!-- input para colocar correo -->
         <ion-item class="card-input">
-          <ion-input labelPlacement="floating" value="tucorreo@tuproveedor.com">
+          <ion-input labelPlacement="floating" [(ngModel)]="email" type="email">
             <div slot="label">Email <ion-text color="danger">(Obligatorio)</ion-text></div>
           </ion-input>
         </ion-item>
       </ion-list>
     </ion-card-content>
 <!-- botones de enviar codigo y probar otro metodo -->
-    <ion-button id="present-alert" class="btn-enviar" fill="clear" color="success" routerLink="/login">Enviar Código</ion-button>
+    <ion-button id="present-alert" class="btn-enviar" fill="clear" color="success" (click)="recuperarContrasena()" [disabled]="!email">Enviar Código</ion-button>
     <ion-button class="btn-probar" fill="clear" color="warning">Probar otro método</ion-button>
   </ion-card>
   <!-- alerta de codigo enviado -->

@@ -1,118 +1,49 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Historial de Viajes</ion-title>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Historial de Viajes</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/home" text="Volver"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<!-- boton iniciar nuevo viaje -->
-<ion-fab vertical="top" horizontal="end" slot="fixed">
-  <ion-fab-button>
-    <ion-icon routerLink="/iniciarviaje" name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Historial de Viajes</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <br>
-  <br>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" routerLink="/iniciarviaje">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <ion-accordion-group>
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light">
-        <ion-label>12/09/2024</ion-label>
+    <ion-accordion *ngFor="let viaje of viajes; let i = index" [value]="'acc' + i">
+      <ion-item slot="header" [color]="i === 0 ? 'primary' : 'light'" class="accordion-header">
+        <ion-label>{{viaje.fecha}}</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        <!-- contenido del viaje -->
-        <ion-item>
+        <ion-item lines="full" class="viaje-item">
           <ion-label>
-            <h1>Kia Morning - ABC 1234</h1>
-            <p>Vehiculo y Patente</p>
+            <h1>{{viaje.vehiculo}}</h1>
+            <p>Vehículo</p>
           </ion-label>
         </ion-item>
 
         <ion-item>
           <ion-label>
-            <h1>Santiago de Chile</h1>
+            <h1>{{viaje.origen}}</h1>
             <p>Origen</p>
           </ion-label>
         </ion-item>
 
         <ion-item>
           <ion-label>
-            <h1>Mendoza, Argentina</h1>
+            <h1>{{viaje.destino}}</h1>
             <p>Destino</p>
           </ion-label>
         </ion-item>
-
-      </div>
-    </ion-accordion>
-    <br>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>7/08/2024</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <!-- contenido del viaje -->
-        <ion-item>
-          <ion-label>
-            <h1>Delorean - XYZ 0987</h1>
-            <p>Vehiculo y Patente</p>
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>
-            <h1>Avenida SiempreViva 123</h1>
-            <p>Origen</p>
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>
-            <h1>Chernobyl</h1>
-            <p>Destino</p>
-          </ion-label>
-        </ion-item>
-
-      </div>
-    </ion-accordion>
-    <br>
-    <ion-accordion value="third">
-      <ion-item slot="header" color="light">
-        <ion-label>30/06/2024</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">
-        <!-- contenido del viaje -->
-        <ion-item>
-          <ion-label>
-            <h1>Toyota Corolla - GHJ 5678</h1>
-            <p>Vehiculo y Patente</p>
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>
-            <h1>Plaza de Armas</h1>
-            <p>Origen</p>
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>
-            <h1>Metro Cerrillos</h1>
-            <p>Destino</p>
-          </ion-label>
-        </ion-item>
-
       </div>
     </ion-accordion>
   </ion-accordion-group>
-
-
 </ion-content>

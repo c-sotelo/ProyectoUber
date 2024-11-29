@@ -56,6 +56,16 @@ const routes: Routes = [
     path: 'iniciarviaje',
     loadChildren: () => import('./pages/iniciarviaje/iniciarviaje.module').then( m => m.IniciarviajePageModule)
   },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+    pathMatch: 'full'
+  }
+
 
 
 

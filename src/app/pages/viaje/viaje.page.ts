@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ViajeService } from '../../services/viaje.service';
+import { Viaje } from '../../interfaces/viaje.interface';
 
 @Component({
   selector: 'app-viaje',
-  templateUrl: './viaje.page.html',
-  styleUrls: ['./viaje.page.scss'],
+  templateUrl: './viaje.page.html'
 })
 export class ViajePage implements OnInit {
+  viajes: Viaje[] = [];
 
-  constructor() { }
+  constructor(private viajeService: ViajeService) { }
 
   ngOnInit() {
+    this.viajeService.obtenerViajes().subscribe(viajes => {
+      this.viajes = viajes;
+    });
   }
 
+  ionViewWillEnter() {
+    this.viajeService.obtenerViajes().subscribe(viajes => {
+      this.viajes = viajes;
+    });
+  }
 }

@@ -1,9 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Iniciar nuevo viaje</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/viaje" text="Anterior"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar nuevo viaje</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,31 +17,42 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-list>
-      <ion-item>
-        <ion-input label="Origen" placeholder="Mi casa"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-input label="Destino" placeholder="El Aeropuerto"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-input label="Hora de Inicio" type="number" placeholder="18:00"></ion-input>
-      </ion-item>
-      
-      <ion-item>
-        <ion-input label="Cantidad de Pasajeros" type="number" placeholder="2"></ion-input>
-      </ion-item>
+  <ion-chip id="network-status" color="success" class="ion-margin">
+    <ion-icon name="wifi-outline"></ion-icon>
+    <ion-label>Conectado</ion-label>
+  </ion-chip>
 
-      <ion-item>
-        <ion-input label="ID Usuario" value="KS-789" [readonly]="true"></ion-input>
-      </ion-item>
-    </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-select label="Vehículo" [(ngModel)]="nuevoViaje.vehiculo" placeholder="Seleccione un vehículo">
+        <ion-select-option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.marca + ' ' + vehiculo.modelo">
+          {{vehiculo.marca}} {{vehiculo.modelo}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Origen" [(ngModel)]="nuevoViaje.origen" placeholder="Mi casa"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Destino" [(ngModel)]="nuevoViaje.destino" placeholder="El Aeropuerto"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Hora de Inicio" [(ngModel)]="nuevoViaje.horaInicio" placeholder="18:00"></ion-input>
+    </ion-item>
+      
+    <ion-item>
+      <ion-input label="Cantidad de Pasajeros" type="number" [(ngModel)]="nuevoViaje.cantidadPasajeros" placeholder="2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="ID Usuario" [(ngModel)]="nuevoViaje.idUsuario" value="KS-789" readonly></ion-input>
+    </ion-item>
   </ion-list>
 
-  <ion-button id="click-trigger1" class="centered-button">
+  <ion-button (click)="iniciarViaje()" class="centered-button">
     <ion-icon slot="start" name="map-outline"></ion-icon>
     Iniciar Viaje
   </ion-button>
@@ -51,3 +65,12 @@
   </ion-popover>
   
 </ion-content>
+<style>
+  #network-status {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+  }
+</style>
+
