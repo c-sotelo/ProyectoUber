@@ -9,45 +9,39 @@
         <ion-icon name="log-out-outline" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>inicio</ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ng-container>
-    <ion-button expand="block" routerLink="/vehiculo">
-      <ion-icon name="car-outline" slot="start"></ion-icon>
-      Vehículos
-    </ion-button>
-    
-    <ion-button expand="block" routerLink="/viaje">
-      <ion-icon name="time-outline" slot="start"></ion-icon>
-      Historial de Viajes
-    </ion-button>
+  <ion-button expand="block" routerLink="/vehiculo">
+    <ion-icon name="car-outline" slot="start"></ion-icon>
+    Vehículos
+  </ion-button>
+  
+  <ion-button expand="block" routerLink="/viaje">
+    <ion-icon name="time-outline" slot="start"></ion-icon>
+    Historial de Viajes
+  </ion-button>
 
-    <ng-container>
-      <div class="card-container">
-        <ion-card class="card2">
-          <ion-card-content>
-            <div class="veh-container">
-              <div class="veh-image">
-                <img src="assets/images/istockphoto-1150931120-2048x2048.jpg" alt="Vehículo 1" />
-              </div>
-            </div>
-          </ion-card-content>
-          <ion-button routerLink="/vehiculo">
-            Viaja en este vehículo
-          </ion-button>
-        </ion-card>
+  <div class="centered-container" [style.display]="isVisible ? 'flex' : 'none'">
+    <ion-card class="centered-card">
+      <ion-card-content>
+        <div class="veh-container">
+          <div class="veh-image">
+            <img src="assets/images/istockphoto-1150931120-2048x2048.jpg" alt="Vehículo 1" />
+          </div>
+        </div>
+      </ion-card-content>
+      <ion-button routerLink="/vehiculo">
+        Viaja en este vehículo
+      </ion-button>
+    </ion-card>
+  </div>
 
-
-      </div>
-
-      <div class="button-container">
-        <ion-button class="mover" (click)="play()">mover</ion-button>
-        <ion-button class="pausar" (click)="pause()">pausar</ion-button>
-        <ion-button class="reiniciar" (click)="stop()">reiniciar</ion-button>
-      </div>
-    </ng-container>
-  </ng-container>
+  <div class="button-container">
+    <ion-button class="mover" (click)="iniciarViaje()">Inicia tu Viaje</ion-button>
+    <ion-button class="pausar" (click)="pause()" [disabled]="!isVisible">pausar</ion-button>
+    <ion-button class="reiniciar" (click)="stop()" [disabled]="!isVisible">reiniciar</ion-button>
+  </div>
 </ion-content>

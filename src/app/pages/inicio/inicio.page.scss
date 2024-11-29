@@ -59,3 +59,30 @@ ion-icon{
     object-fit: cover;
   }
 }
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 1rem;
+}
+
+.centered-card {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  
+  ion-button {
+    margin: 1rem;
+  }
+}
+
+.veh-container {
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}

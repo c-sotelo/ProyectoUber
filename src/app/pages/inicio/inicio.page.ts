@@ -19,6 +19,7 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
 
   correo:string = "";
   loaded:boolean = false;
+  isVisible: boolean = false;
   
   @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement> | undefined;
   private animation: Animation | undefined;
@@ -64,6 +65,24 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
     setTimeout(() =>{
       this.loaded = true;
     },4000)
+  }
+
+  iniciarViaje() {
+    this.isVisible = true;
+    // Esperamos un momento para que el elemento esté en el DOM
+    setTimeout(() => {
+      if (this.card) {
+        this.animation = this.animationCtrl
+          .create()
+          .addElement(this.card.nativeElement)
+          .duration(1500)
+          .iterations(Infinity)
+          .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+          .fromTo('opacity', '1', '0.2');
+        
+        this.animation.play();
+      }
+    }, 100);
   }
 
   play() {
