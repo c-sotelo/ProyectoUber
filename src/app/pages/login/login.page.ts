@@ -46,4 +46,8 @@ export class LoginPage {
   recuperarcontra() {
     this.router.navigate(['/recuperarcontra']);
   }
+
+  goBack() {
+    this.router.navigate(['/home']);
+  }
 }

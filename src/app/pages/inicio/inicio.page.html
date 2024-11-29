@@ -14,12 +14,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button expand="block" routerLink="/vehiculo">
+  <ion-button #vehiculoBtn expand="block" routerLink="/vehiculo" [style.display]="buttonsVisible ? 'block' : 'none'">
     <ion-icon name="car-outline" slot="start"></ion-icon>
     Vehículos
   </ion-button>
   
-  <ion-button expand="block" routerLink="/viaje">
+  <ion-button #viajeBtn expand="block" routerLink="/viaje" [style.display]="buttonsVisible ? 'block' : 'none'">
     <ion-icon name="time-outline" slot="start"></ion-icon>
     Historial de Viajes
   </ion-button>
@@ -34,14 +34,12 @@
         </div>
       </ion-card-content>
       <ion-button routerLink="/vehiculo">
-        Viaja en este vehículo
+        Bienvenido a Uber
       </ion-button>
     </ion-card>
   </div>
 
   <div class="button-container">
     <ion-button class="mover" (click)="iniciarViaje()">Inicia tu Viaje</ion-button>
-    <ion-button class="pausar" (click)="pause()" [disabled]="!isVisible">pausar</ion-button>
-    <ion-button class="reiniciar" (click)="stop()" [disabled]="!isVisible">reiniciar</ion-button>
   </div>
 </ion-content>

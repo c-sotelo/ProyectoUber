@@ -20,6 +20,7 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
   correo:string = "";
   loaded:boolean = false;
   isVisible: boolean = false;
+  buttonsVisible: boolean = false;
   
   @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement> | undefined;
   private animation: Animation | undefined;
@@ -38,15 +39,6 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
   }
   ionViewDidEnter(): void {
     console.log("view did enter");
-    if (this.card) {
-      this.animation = this.animationCtrl
-      .create()
-      .addElement(this.card.nativeElement)
-      .duration(1500)
-      .iterations(Infinity)
-      .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-      .fromTo('opacity', '1', '0.2');
-    }
   }
 
 
@@ -62,6 +54,9 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
     this.correo = this.activateRoute.snapshot.params["correo"];
     console.log("PARAMETRO URL  ----> ", this.correo);
     
+    this.isVisible = false;
+    this.buttonsVisible = false;
+    
     setTimeout(() =>{
       this.loaded = true;
     },4000)
@@ -76,11 +71,15 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
           .create()
           .addElement(this.card.nativeElement)
           .duration(1500)
-          .iterations(Infinity)
-          .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-          .fromTo('opacity', '1', '0.2');
+          .iterations(1)
+          .fromTo('transform', 'translateY(-100px)', 'translateY(0px)')
+          .fromTo('opacity', '0', '1');
         
-        this.animation.play();
+        this.animation.play().then(() => {
+          setTimeout(() => {
+            this.buttonsVisible = true;
+          }, 200);
+        });
       }
     }, 100);
   }

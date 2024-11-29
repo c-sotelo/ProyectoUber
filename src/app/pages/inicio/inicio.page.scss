@@ -66,6 +66,10 @@ ion-icon{
   align-items: center;
   min-height: 50vh;
   padding: 1rem;
+  ion-button{
+    display: block;
+    margin: auto;
+  }
 }
 
 .centered-card {
