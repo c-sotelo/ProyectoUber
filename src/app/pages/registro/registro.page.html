@@ -8,37 +8,53 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-
-<ion-content [fullscreen]="true">
-
   <div class="box">
-    <ion-list>
-      <ion-item>
-        <ion-input [(ngModel)]="email" label="Correo"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]="password" type="password" label="Contraseña"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]="confirmPassword" type="password" label="Confirme contraseña"></ion-input>
-      </ion-item>
+    <form [formGroup]="registroForm" (ngSubmit)="registro()">
+      <ion-list>
+        <ion-item>
+          <ion-input 
+            formControlName="email" 
+            type="email" 
+            label="Correo"
+            [class.invalid]="isSubmitted && errorControl['email'].errors">
+          </ion-input>
+        </ion-item>
+        <div class="error-message" *ngIf="isSubmitted && errorControl['email'].errors?.['required']">
+          El correo es requerido
+        </div>
+        <div class="error-message" *ngIf="isSubmitted && errorControl['email'].errors?.['email']">
+          Por favor ingrese un correo válido
+        </div>
 
-    </ion-list>
+        <ion-item>
+          <ion-input 
+            formControlName="password" 
+            type="password" 
+            label="Contraseña"
+            [class.invalid]="isSubmitted && errorControl['password'].errors">
+          </ion-input>
+        </ion-item>
+        <div class="error-message" *ngIf="isSubmitted && errorControl['password'].errors?.['required']">
+          La contraseña es requerida
+        </div>
+        <div class="error-message" *ngIf="isSubmitted && errorControl['password'].errors?.['minlength']">
+          La contraseña debe tener al menos 6 caracteres
+        </div>
 
-  
-    <ion-button (click)="registro()" color="warning">Registrarse</ion-button>
+        <ion-item>
+          <ion-input 
+            formControlName="confirmPassword" 
+            type="password" 
+            label="Confirme contraseña"
+            [class.invalid]="isSubmitted && errorControl['confirmPassword'].errors">
+          </ion-input>
+        </ion-item>
+        <div class="error-message" *ngIf="isSubmitted && errorControl['confirmPassword'].errors?.['required']">
+          Debe confirmar la contraseña
+        </div>
+      </ion-list>
 
+      <ion-button type="submit" color="warning" expand="block">Registrarse</ion-button>
+    </form>
   </div>
-
-
-
-
-
-
 </ion-content>

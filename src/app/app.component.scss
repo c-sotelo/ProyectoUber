@@ -1,18 +1,40 @@
-ion-menu ion-toolbar {
-    --background: var(--ion-color-primary);
-    --color: var(--ion-color-light);
-}
-
-ion-menu ion-content ion-item{
-    --background: var(--ion-color-light);
-}
-
-ion-menu ion-content {
-    --background: var(--ion-color-light);
-}
-
-/*
-ion-menu ion-item:hover, ion-menu ion-item.ion-focused, ion-menu ion-item.ion-activated {
-    --background: red; // cambio de fondo al pasar el mouse o seleccionar
+ion-menu {
+  --background: #0D1B2A;
+  
+  ion-toolbar {
+    --background: #1B263B;
+    --color: #E0E1DD;
+    
+    ion-title {
+      font-weight: 600;
+    }
   }
-*/
+
+  ion-content {
+    --background: #0D1B2A;
+    
+    ion-list {
+      background: transparent;
+      padding: 8px;
+    }
+
+    ion-item {
+      --background: #1B263B;
+      --color: #E0E1DD;
+      margin: 8px 0;
+      border-radius: 8px;
+      
+      ion-icon {
+        color: #778DA9;
+        margin-right: 8px;
+      }
+
+      &:hover {
+        --background: #415A77;
+        ion-icon {
+          color: #E0E1DD;
+        }
+      }
+    }
+  }
+}

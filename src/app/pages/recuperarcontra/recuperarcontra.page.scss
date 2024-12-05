@@ -1,17 +1,36 @@
 ion-card {
-    background: var(--ion-color-light)
+    background: #1B263B;
+    color: #E0E1DD;
+    margin: 20px;
+    border-radius: 12px;
+    
+    ion-card-header {
+        background: #415A77;
+        border-radius: 12px 12px 0 0;
+        
+        ion-card-title {
+            color: #E0E1DD;
+        }
+        
+        ion-card-subtitle {
+            color: #778DA9;
+        }
+    }
 }
 
 .card-input {
-    --background: var(--ion-color-light);
+    --background: #0D1B2A;
+    border-radius: 8px;
+    margin: 10px 0;
 }
 
-
 .btn-enviar {
+    --background: #2dd55b;
     font-weight: bold;
 }
   
 .btn-probar {
+    --background: #e0ac08;
     font-weight: bold;
 }
   
