@@ -21,6 +21,7 @@ export class InicioPage implements OnInit,ViewWillEnter, ViewDidEnter, ViewWillL
   loaded:boolean = false;
   isVisible: boolean = false;
   buttonsVisible: boolean = false;
+  usuario: { correo: string; nombre: string } = { correo: '', nombre: '' };
   
   @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement> | undefined;
   private animation: Animation | undefined;
