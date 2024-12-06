@@ -1,19 +1,20 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ServiciosmuxasgraciasService } from './serviciosmuxasgracias.service';
-import { HttpClientModule } from '@angular/common/http';
+import { BASE_URL } from '../config/config';
+import { environment } from '../../environments/environment';
 
 describe('ServiciosmuxasgraciasService', () => {
   let service: ServiciosmuxasgraciasService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientTestingModule],
       providers: [
         ServiciosmuxasgraciasService,
-        { provide: 'BASE_URL', useValue: 'http://localhost:3000' }
+        { provide: BASE_URL, useValue: environment.baseUrl || 'http://test-url.com' }
       ]
     });
-    
     service = TestBed.inject(ServiciosmuxasgraciasService);
   });
 
